@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "git clean -fdX .",
+    "test": "node scripts/test.js"
+  },
+  "workspaces": [
+    "packages/react-router",
+    "packages/react-router-native"
+  ]
+}
