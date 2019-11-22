@@ -2,12 +2,16 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "yarn workspaces run build",
     "clean": "git clean -fdX .",
-    "test": "node scripts/test.js"
+    "test": "yarn workspaces run test",
+    "test-single": "node ./scripts/test.js"
   },
-  "workspaces": [
-    "packages/react-router",
-    "packages/react-router-native"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/react-router",
+      "packages/react-router-native"
+    ],
+    "nohoist": ["**/react-native", "**/react-native/**", "**/babel-jest", "**/babel-jest/**"]
+  }
 }

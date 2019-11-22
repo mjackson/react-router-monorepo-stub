@@ -13,5 +13,5 @@ const packages = target ? [target] : fs.readdirSync(packagesDir);
 
 packages.forEach(packageName => {
   process.chdir(path.join(packagesDir, packageName));
-  exec("yarn test");
+  exec("yarn run test");
 });
