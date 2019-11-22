@@ -50,7 +50,8 @@ export default [
             "module:metro-react-native-babel-preset",
             {
               disableImportExportTransform: true,
-              enableBabelRuntime: false
+              enableBabelRuntime: false,
+              withDevTools: false
             }
           ]
         ],
