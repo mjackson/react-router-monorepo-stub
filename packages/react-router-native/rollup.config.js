@@ -8,11 +8,7 @@ import { name } from "./package.json";
 export default [
   {
     input: "modules/index.js",
-    output: {
-      file: `build/${name}.development.js`,
-      format: "esm",
-      sourcemap: true
-    },
+    output: { file: `build/${name}.development.js`, format: "esm" },
     external: ["react", "prop-types", "react-native"],
     plugins: [
       babel({
@@ -35,11 +31,7 @@ export default [
   },
   {
     input: "modules/index.js",
-    output: {
-      file: `build/${name}.production.js`,
-      format: "esm",
-      sourcemap: true
-    },
+    output: { file: `build/${name}.production.js`, format: "esm" },
     external: ["react", "react-native"],
     plugins: [
       babel({
