@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
 import ignore from "rollup-plugin-ignore";
 import nodeResolve from "rollup-plugin-node-resolve";
-import replace from "rollup-plugin-replace";
+import replace from "@rollup/plugin-replace";
 
 import { name } from "./package.json";
 
@@ -22,8 +22,7 @@ export default [
               enableBabelRuntime: false
             }
           ]
-        ],
-        plugins: [["@babel/plugin-transform-runtime", { useESModules: true }]]
+        ]
       }),
       nodeResolve(),
       replace({ "process.env.NODE_ENV": JSON.stringify("development") })
@@ -46,8 +45,7 @@ export default [
               withDevTools: false
             }
           ]
-        ],
-        plugins: [["@babel/plugin-transform-runtime", { useESModules: true }]]
+        ]
       }),
       ignore(["prop-types"]),
       nodeResolve(),

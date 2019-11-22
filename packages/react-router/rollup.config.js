@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
 import compiler from "@ampproject/rollup-plugin-closure-compiler";
 import ignore from "rollup-plugin-ignore";
-import replace from "rollup-plugin-replace";
+import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
 
 import { name } from "./package.json";
