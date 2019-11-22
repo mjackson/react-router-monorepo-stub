@@ -12,6 +12,6 @@
       "packages/react-router",
       "packages/react-router-native"
     ],
-    "nohoist": ["**/react-native", "**/react-native/**", "**/babel-jest", "**/babel-jest/**"]
+    "nohoist": ["**/react-native", "**/react-native/**"]
   }
 }
