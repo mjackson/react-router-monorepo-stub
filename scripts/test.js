@@ -6,11 +6,8 @@ function exec(cmd) {
   execSync(cmd, { stdio: "inherit", env: process.env });
 }
 
-const packagesDir = path.resolve(__dirname, "../packages");
-const allPackages = fs.readdirSync(packagesDir);
-
-const args = process.argv.slice(2);
-const target = args[0];
+const allPackages = fs.readdirSync(path.resolve(__dirname, "../packages"));
+const target = process.argv[2];
 
 if (target && !allPackages.includes(target)) {
   console.error(`Invalid package: ${target}`);

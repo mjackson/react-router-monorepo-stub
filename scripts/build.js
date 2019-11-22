@@ -5,12 +5,10 @@ function exec(cmd) {
   execSync(cmd, { stdio: "inherit", env: process.env });
 }
 
-const packagesDir = path.resolve(__dirname, "../packages");
-
 // react-router-native's build uses react-router's,
 // so we need to build react-router first
-process.chdir(path.join(packagesDir, "react-router"));
+process.chdir(path.resolve(__dirname, "../packages/react-router"));
 exec("yarn build");
 
-process.chdir(path.join(packagesDir, "react-router-native"));
+process.chdir(path.resolve(__dirname, "../packages/react-router-native"));
 exec("yarn build");
