@@ -13,12 +13,11 @@ export default [
       format: "esm",
       sourcemap: true
     },
-    external: ["react", "prop-types"],
+    external: ["react", "prop-types", "react-native"],
     plugins: [
       babel({
         exclude: /node_modules/,
         runtimeHelpers: true,
-        sourceMaps: true,
         presets: [
           [
             "module:metro-react-native-babel-preset",
@@ -41,12 +40,20 @@ export default [
       format: "esm",
       sourcemap: true
     },
-    external: ["react"],
+    external: ["react", "react-native"],
     plugins: [
       babel({
         exclude: /node_modules/,
         runtimeHelpers: true,
-        sourceMaps: true,
+        presets: [
+          [
+            "module:metro-react-native-babel-preset",
+            {
+              disableImportExportTransform: true,
+              enableBabelRuntime: false
+            }
+          ]
+        ],
         plugins: [["@babel/plugin-transform-runtime", { useESModules: true }]]
       }),
       ignore(["prop-types"]),

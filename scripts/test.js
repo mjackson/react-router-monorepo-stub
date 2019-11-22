@@ -6,12 +6,15 @@ function exec(cmd) {
   execSync(cmd, { stdio: "inherit", env: process.env });
 }
 
+const packagesDir = path.resolve(__dirname, "../packages");
+const allPackages = fs.readdirSync(packagesDir);
+
 const args = process.argv.slice(2);
 const target = args[0];
-const packagesDir = path.resolve(__dirname, "../packages");
-const packages = target ? [target] : fs.readdirSync(packagesDir);
 
-packages.forEach(packageName => {
-  process.chdir(path.join(packagesDir, packageName));
-  exec("yarn test");
-});
+if (target && !allPackages.includes(target)) {
+  console.error(`Invalid package: ${target}`);
+  process.exit(1);
+}
+
+exec(`jest --projects packages/${target || "*"}`);

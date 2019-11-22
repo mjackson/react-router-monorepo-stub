@@ -6,8 +6,18 @@
     "clean": "git clean -fdX .",
     "test": "node scripts/test.js"
   },
-  "workspaces": [
-    "packages/react-router",
-    "packages/react-router-native"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/react-router",
+      "packages/react-router-native"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1"
+  }
 }

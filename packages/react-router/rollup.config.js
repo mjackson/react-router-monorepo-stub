@@ -16,11 +16,7 @@ export default [
     },
     external: ["react", "prop-types"],
     plugins: [
-      babel({
-        exclude: /node_modules/,
-        runtimeHelpers: true,
-        sourceMaps: true
-      }),
+      babel({ exclude: /node_modules/, runtimeHelpers: true }),
       replace({ "process.env.NODE_ENV": JSON.stringify("development") })
     ]
   },
@@ -33,11 +29,7 @@ export default [
     },
     external: ["react"],
     plugins: [
-      babel({
-        exclude: /node_modules/,
-        runtimeHelpers: true,
-        sourceMaps: true
-      }),
+      babel({ exclude: /node_modules/, runtimeHelpers: true }),
       ignore(["prop-types"]),
       replace({ "process.env.NODE_ENV": JSON.stringify("production") }),
       compiler({
@@ -59,11 +51,7 @@ export default [
     },
     external: ["react", "prop-types"],
     plugins: [
-      babel({
-        exclude: /node_modules/,
-        runtimeHelpers: true,
-        sourceMaps: true
-      }),
+      babel({ exclude: /node_modules/, runtimeHelpers: true }),
       replace({ "process.env.NODE_ENV": JSON.stringify("development") })
     ]
   },
@@ -78,11 +66,7 @@ export default [
     },
     external: ["react"],
     plugins: [
-      babel({
-        exclude: /node_modules/,
-        runtimeHelpers: true,
-        sourceMaps: true
-      }),
+      babel({ exclude: /node_modules/, runtimeHelpers: true }),
       ignore(["prop-types"]),
       replace({ "process.env.NODE_ENV": JSON.stringify("production") }),
       compiler({
