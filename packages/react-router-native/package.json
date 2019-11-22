@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "build/react-router-native.production.js",
+  "files": [
+    "build"
+  ],
   "peerDependencies": {
     "react-native": "^0.61.4"
   },
