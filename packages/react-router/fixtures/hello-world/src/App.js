@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import ReactRouter from "../react-router.production.js";
+import ReactRouter from "./react-router.production.js";
 
 function App() {
   return (
